@@ -1,0 +1,11 @@
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://www1.szu.edu.cn/board/infolist.asp?infotype=%D0%D0%D5%FE"
+# headers = {
+#     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36'}
+r = requests.get(url)
+r.encoding = 'gbk'
+Alltitle = BeautifulSoup(r.text, 'html.parser').find_all('a', class_='fontcolor3')
+for item in Alltitle:
+    print(item.get_text())
