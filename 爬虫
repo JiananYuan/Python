@@ -9,3 +9,5 @@ r.encoding = 'gbk'
 Alltitle = BeautifulSoup(r.text, 'html.parser').find_all('a', class_='fontcolor3')
 for item in Alltitle:
     print(item.get_text())
+
+// 有关“漂亮汤”，参见： https://www.cnblogs.com/hanmk/p/8724162.html
